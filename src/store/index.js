@@ -5,12 +5,16 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 /* création du "store" */
 export const store = new Vuex.Store({
-	state: {
-		X: 0
-	},
-	mutations: {
-		SET_X: (state, val) => {
-			state.X = val;
-		}
-	}
+    state: {
+        X: 0,
+        Y: 0,
+    },
+    mutations: {
+        SET_X: (state, val) => {
+            state.X = val;
+        },
+        SET_Y: (state, val) => {
+            state.Y = val;
+        }
+    }
 });

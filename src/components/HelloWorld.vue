@@ -12,9 +12,13 @@
       <template v-slot:content>Un nouveau contenu</template>
       <template v-slot:footer> </template>
     </ctn>
-    <p>Store: {{ $store.state.X }}</p>
+    <p>Store: {{ $store.state.X }} - {{ $store.state.Y }}</p>
+    <h3>X</h3>
     <button @click="addX">+1</button>
     <button @click="subX">-1</button>
+    <h3>Y</h3>
+    <button @click="addY">+1</button>
+    <button @click="subY">-1</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -125,6 +129,12 @@ export default {
     },
     subX() {
       this.$store.commit("SET_X", this.$store.state.X - 1);
+    },
+    addY() {
+      this.$store.commit("SET_Y", this.$store.state.Y + 1);
+    },
+    subY() {
+      this.$store.commit("SET_Y", this.$store.state.Y - 1);
     },
   },
   beforeCreate() {
