@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld
+      msg="Welcome to Your Vue.js App"
+      :tableau="nodes"
+      @click="elemClick"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+  data() {
+    return { nodes: [1, 2, 3, 4, 5] };
+  },
+  methods: {
+    // Provoqué par l'enfant via this.$emit('click',n)
+    elemClick(val) {
+      alert(val);
+    },
+  },
+};
 </script>
 
 <style>
