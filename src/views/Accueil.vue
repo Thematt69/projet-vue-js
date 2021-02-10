@@ -1,7 +1,14 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="accueil">
+    <h1>{{ txt }}</h1>
+    <h2>{{ config.ville }}</h2>
+
+    <p>
+      Météo : {{ meteo }}
+    </p>
+    <p>
+      Risque de précipitations : {{ risquePluie }}
+    </p>
   </div>
 </template>
 
